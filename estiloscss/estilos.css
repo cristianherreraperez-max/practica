@@ -1,0 +1,15 @@
+body { font-family: Arial; margin: 0; background: #111827; }
+header { background: #090D16; color: #38BDF8; padding: 15px; display: flex; justify-content: space-between; }
+nav a { color:#F9FAFB; margin-left: 15px; text-decoration: none; font-weight: bold; cursor: pointer; }
+main { max-width: 900px; margin: 20px auto; padding: 10px; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px; }
+.card { background: #1F2937; padding: 15px; border-radius: 8px; text-align: center; transition: 0.2s; }
+.card:hover { transform: scale(1.03); }
+.card img { width: 100%; height: 130px; object-fit: cover; }
+
+button { background: #7C3AED; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer; }
+button:hover { background: #1d4ed8; }
+.caja { background: white; padding: 15px; border-radius: 8px; margin-top: 15px; }
+input, select, textarea { padding: 8px; margin: 5px 0; border: 1px solid #ccc; border-radius: 4px; }
+header { position: sticky; top: 0; z-index: 100; }

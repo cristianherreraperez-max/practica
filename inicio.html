@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TecnoOruro</title>
+    <link rel="stylesheet" href="estiloscss/estilos.css">
+    <script src="https://jsdelivr.net"></script>
+</head>
+<body>
+    <header>
+        <b>TECNOPARTS ORURO</b>
+        <nav>
+            <a onclick="verSeccion('sec-inicio')">Inicio</a>
+            <a onclick="verSeccion('sec-tienda')">Productos</a>
+            <a onclick="verSeccion('sec-nosotros')">Nosotros</a>
+            <a onclick="verSeccion('sec-dashboard')">Dashboard</a>
+            <a onclick="verSeccion('sec-contacto')">Contacto</a>
+            <a onclick="irCarrito()">Carrito (<span id="cant-carrito">0</span>)</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- SECCION INICIO (3.1) -->
+        <div id="sec-inicio">
+            <div class="caja" style="text-align:center;">
+                <img src="imagenes/descarga (10).jpg" style="width:100%; height:180px; object-fit:cover; border-radius:8px;">
+                <h2>Bienvenido a TecnoParts</h2>
+                <p>Tu tienda de tecnologia en Oruro - Bolivia</p>
+                <p><b>Categorias:</b> Perifericos | Audio | Pantallas | Accesorios</p>
+                <button onclick="verSeccion('sec-tienda')">Explorar Catalogo</button>
+            </div>
+            <h3 style="color:white;">Productos Destacados</h3>
+            <div id="destacados" class="grid"></div>
+        </div>
+
+        <!-- SECCION PRODUCTOS / TIENDA (3.2) -->
+        <div id="sec-tienda" style="display:none;">
+            <input type="text" id="buscador" placeholder="Buscar..." onkeyup="filtrar()">
+            <select id="categoria" onchange="filtrar()">
+                <option value="Todas">Todas</option>
+                <option value="Perifericos">Perifericos</option>
+                <option value="Audio">Audio</option>
+                <option value="Pantallas">Pantallas</option>
+                <option value="Accesorios">Accesorios</option>
+            </select>
+            <div id="productos" class="grid"></div>
+            <div id="caja-carrito" class="caja">
+                <h3>Carrito (Total: Bs. <span id="total">0</span>)</h3>
+                <ul id="carrito"></ul>
+                <button onclick="comprar()">Finalizar Compra</button>
+                <button onclick="vaciar()">Vaciar</button>
+            </div>
+        </div>
+
+        <!-- SECCION NOSOTROS (3.3) -->
+        <div id="sec-nosotros" class="caja" style="display:none;">
+            <h2>Sobre Nosotros</h2>
+            <img src="imagenes/descarga (10).jpg" style="width:100%; height:160px; object-fit:cover; border-radius:8px;">
+            <p><b>Historia:</b> TecnoParts nacio en Oruro para ofrecer accesorios y equipos de computacion de calidad a precios accesibles.</p>
+            <p><b>Mision:</b> Brindar productos tecnologicos modernos con buena atencion y garantia.</p>
+            <p><b>Vision:</b> Ser la tienda virtual de tecnologia lider en Oruro y Bolivia.</p>
+            <p><b>Valores:</b> Honestidad, responsabilidad, innovacion y compromiso con el cliente.</p>
+            <p><b>Objetivos:</b> Facilitar las compras en linea y mejorar cada dia el servicio.</p>
+        </div>
+
+        <!-- SECCION DASHBOARD -->
+        <div id="sec-dashboard" class="caja" style="display:none;">
+            <p>Productos: <b id="d-cant">0</b> | Stock Total: <b id="d-stock">0</b> | Precio Promedio: <b>Bs. <span id="d-prom">0</span></b></p>
+            <canvas id="grafico"></canvas>
+        </div>
+
+        <!-- SECCION CONTACTO (3.4) -->
+        <form id="sec-contacto" class="caja" style="display:none;" onsubmit="validar(event)">
+            <h3>Contacto</h3>
+            <input type="text" id="nombre" placeholder="Nombre completo"><br>
+            <input type="text" id="correo" placeholder="Correo electronico"><br>
+            <input type="text" id="celular" placeholder="Numero de celular"><br>
+            <input type="text" id="asunto" placeholder="Asunto"><br>
+            <textarea id="mensaje" placeholder="Tu mensaje"></textarea><br>
+            <button type="submit">Enviar</button>
+            <p id="aviso"></p>
+        </form>
+    </main>
+
+    <footer style="text-align:center; color:#9CA3AF; padding:15px;">
+        TecnoParts - Oruro, Bolivia | Proyecto Final
+    </footer>
+
+    <script src="java scrip/app.js"></script>
+</body>
+</html>
+
+
+
